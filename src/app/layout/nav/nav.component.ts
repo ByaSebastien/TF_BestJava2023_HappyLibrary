@@ -3,6 +3,14 @@ import {Link} from "../../core/models/link.model";
 import {TokenDtoModel} from "../../core/models/token.dto.model";
 import {SessionService} from "../../core/services/session.service";
 
+const anonymousNav: Link[] = [
+  {title: 'Login',url: '/login'},
+  {title: 'Register',url: '/register'},
+];
+
+const connectedNav: Link[] = [
+];
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -22,6 +30,7 @@ export class NavComponent implements OnInit {
     this.links = [];
     this._sessionService.currentUser$.subscribe((value) => {
       this.currentUser = value;
+      this.links = value ? connectedNav : anonymousNav;
       console.log("And again");
     })
   }

@@ -1,11 +1,30 @@
-ul {
+:host {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  list-style: none;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex: 1;
+    height: 100%;
 
-  li a {
-    font-weight: 600;
-    color: white;
-    padding: 7px;
+    li{
+      display: flex;
+      align-items: center;
+    }
+    a {
+      font-weight: 600;
+      color: white;
+      padding: 7px;
+    }
+  }
+
+  .auth {
+    display: flex;
+    align-items: center;
+    *{
+      margin: 3px;
+    }
   }
 }

@@ -2,12 +2,8 @@
   <li *ngFor="let link of links">
     <a [routerLink]="link.url">{{link.title}}</a>
   </li>
-  <li>
-    <a *ngIf="!currentUser" routerLink="/login">Login</a>
-    <a *ngIf="currentUser">{{currentUser.user.email}}</a>
-  </li>
-  <li>
-    <a *ngIf="!currentUser" routerLink="/register">Register</a>
-    <a *ngIf="currentUser" (click)="logout()">Logout</a>
-  </li>
 </ul>
+<div class="auth" *ngIf="currentUser">
+  <h4>{{currentUser.user.email}}</h4>
+  <button (click)="logout()">Logout</button>
+</div>
