@@ -1,0 +1,28 @@
+<div>
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="login" formControlName="login">
+    <p *ngIf="loginForm.get('login')?.touched &&
+        loginForm.get('login')?.hasError('required')"
+       class="error">
+      Ce champ est requis
+    </p>
+    <p *ngIf="loginForm.get('login')?.dirty &&
+        loginForm.get('login')?.hasError('maxlength')"
+       class="error">
+      Maximum 10 char
+    </p>
+    <input type="password" placeholder="password" formControlName="password">
+    <p *ngIf="loginForm.get('password')?.touched &&
+        loginForm.get('password')?.hasError('required')"
+       class="error">
+      Ce champ est requis
+    </p>
+    <p *ngIf="loginForm.get('password')?.dirty &&
+        loginForm.get('password')?.hasError('minlength')"
+       class="error">
+      Minimum 5 char
+    </p>
+    <button type="submit">Login</button>
+  </form>
+</div>

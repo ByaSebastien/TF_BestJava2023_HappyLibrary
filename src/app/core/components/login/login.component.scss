@@ -1,0 +1,25 @@
+div {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  min-height: 100%;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: fit-content;
+    margin: auto;
+
+    input {
+      margin: 5px;
+    }
+
+    button {
+      background-color: darkcyan;
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+}

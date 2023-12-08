@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let link of links">
+    <a [routerLink]="link.url">{{link.title}}</a>
+  </li>
+  <li>
+    <a *ngIf="!isConnected" routerLink="/login">Login</a>
+    <a *ngIf="isConnected" (click)="logout()">Logout</a>
+  </li>
+</ul>
