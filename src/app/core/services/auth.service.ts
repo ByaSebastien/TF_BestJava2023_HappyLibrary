@@ -14,9 +14,8 @@ export class AuthService{
     private readonly _http: HttpClient
   ){}
 
-  login(form: LoginFormModel): boolean{
-
-    return true;
+  login(form: LoginFormModel): Observable<TokenDtoModel>{
+    return this._http.post<TokenDtoModel>("http://localhost:3000/login",form);
   }
 
   register(form: RegisterFormModel): Observable<TokenDtoModel>{

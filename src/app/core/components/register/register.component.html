@@ -1,0 +1,33 @@
+<div>
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="email" formControlName="email">
+    <p *ngIf="registerForm.get('email')?.touched &&
+        registerForm.get('email')?.hasError('required')"
+       class="error">
+      Ce champ est requis
+    </p>
+    <p *ngIf="registerForm.get('email')?.dirty &&
+        registerForm.get('email')?.hasError('maxlength')"
+       class="error">
+      Maximum 100 char
+    </p>
+    <p *ngIf="registerForm.get('email')?.dirty &&
+        registerForm.get('email')?.hasError('email')"
+       class="error">
+      Rentrez un email valide
+    </p>
+    <input type="password" placeholder="password" formControlName="password">
+    <p *ngIf="registerForm.get('password')?.touched &&
+        registerForm.get('password')?.hasError('required')"
+       class="error">
+      Ce champ est requis
+    </p>
+    <p *ngIf="registerForm.get('password')?.dirty &&
+        registerForm.get('password')?.hasError('minlength')"
+       class="error">
+      Minimum 5 char
+    </p>
+    <button type="submit">Register</button>
+  </form>
+</div>

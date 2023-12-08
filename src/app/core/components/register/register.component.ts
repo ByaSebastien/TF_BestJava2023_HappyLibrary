@@ -1,42 +1,42 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
-import {LoginFormModel} from "../../models/login.form.model";
 import {Router} from "@angular/router";
+import {RegisterFormModel} from "../../models/register.form.model";
 import {SessionService} from "../../services/session.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent {
+export class RegisterComponent {
 
-  loginForm!: FormGroup;
+  registerForm!: FormGroup;
 
   constructor(
     private readonly _fb: FormBuilder,
     private readonly _authService: AuthService,
-    private readonly _sessionService: SessionService,
-    private readonly _router: Router
+    private readonly _router: Router,
+    private readonly _sessionService: SessionService
   ) {
-    this.loginForm = this._fb.group({
+    this.registerForm = this._fb.group({
       email: [null, [Validators.required, Validators.maxLength(100),Validators.email]],
       password: [null, [Validators.required, Validators.minLength(5)]]
     });
   }
 
   onSubmit(): void {
-    this.loginForm.markAllAsTouched();
+    this.registerForm.markAllAsTouched();
 
-    if (!this.loginForm.valid) {
+    if (!this.registerForm.valid) {
       console.log('error')
       return;
     }
 
-    let credential: LoginFormModel = this.loginForm.value;
+    let credential: RegisterFormModel = this.registerForm.value;
 
-    this._authService.login(credential).subscribe({
+    this._authService.register(credential).subscribe({
       next: (data) => {
         console.log("success");
         console.log(data);

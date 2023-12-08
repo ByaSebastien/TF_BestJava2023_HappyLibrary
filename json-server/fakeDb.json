@@ -1,5 +1,16 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "roger@test.be",
+      "password": "$2a$10$MWnVoY0v6DAuNb2SaaRq5un/BxUfAqnwwVDI23sIDniJxDxViF/2i",
+      "id": 1
+    },
+    {
+      "email": "seb@test.be",
+      "password": "$2a$10$jVT73s72SKPzk78/g1MUF.stU42zNrxzhH3Szs.6RyaQbEYAYOhdC",
+      "id": 2
+    }
+  ],
   "books": [
     {
       "id": 1,

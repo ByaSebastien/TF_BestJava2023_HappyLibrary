@@ -10,6 +10,7 @@ import { HomeComponent } from './core/components/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
 import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
+import { RegisterComponent } from './core/components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
     NavComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
