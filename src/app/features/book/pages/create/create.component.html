@@ -1,0 +1,11 @@
+<h2>Book Form</h2>
+<hr>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="title" formControlName="title">
+  <textarea type="text" placeholder="description" formControlName="description"></textarea>
+  <input type="text" placeholder="author" formControlName="author">
+  <input type="text" placeholder="creationDate" formControlName="creationDate">
+  <button type="submit">Create</button>
+</form>
+<hr>
+<button routerLink="/book">Back To list</button>

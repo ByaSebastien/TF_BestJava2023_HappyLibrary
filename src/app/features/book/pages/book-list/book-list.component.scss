@@ -1,0 +1,15 @@
+:host{
+  width: 80%;
+  margin: auto;
+
+  h2{
+    text-align: center;
+  }
+  li{
+    display: flex;
+    *{
+      margin: 3px;
+      padding: 3px;
+    }
+  }
+}

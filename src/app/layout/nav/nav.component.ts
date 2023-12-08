@@ -4,11 +4,13 @@ import {TokenDtoModel} from "../../core/models/token.dto.model";
 import {SessionService} from "../../core/services/session.service";
 
 const anonymousNav: Link[] = [
+  {title: 'Book',url:'/book'},
   {title: 'Login',url: '/login'},
   {title: 'Register',url: '/register'},
 ];
 
 const connectedNav: Link[] = [
+  {title: 'Book',url:'/book'},
 ];
 
 @Component({

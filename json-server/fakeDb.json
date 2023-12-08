@@ -80,18 +80,18 @@
       "creationDate": "2007"
     },
     {
-      "id": 10,
-      "title": "Influence et manipulation",
-      "description": "Un regard approfondi sur les mécanismes de l'influence sociale, écrit par Robert B. Cialdini.",
-      "author": "Robert B. Cialdini",
-      "creationDate": "1984"
-    },
-    {
       "id": 11,
       "title": "La stratégie du choc",
       "description": "Un livre qui examine l'utilisation stratégique des crises pour introduire des changements radicaux, écrit par Naomi Klein.",
       "author": "Naomi Klein",
       "creationDate": "2007"
+    },
+    {
+      "title": "test",
+      "description": null,
+      "author": "ok",
+      "creationDate": null,
+      "id": 12
     }
   ]
 }
