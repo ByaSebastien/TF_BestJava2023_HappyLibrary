@@ -1,16 +1,21 @@
 <div>
   <h2>Login</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <input type="text" placeholder="login" formControlName="login">
-    <p *ngIf="loginForm.get('login')?.touched &&
-        loginForm.get('login')?.hasError('required')"
+    <input type="text" placeholder="email" formControlName="email">
+    <p *ngIf="loginForm.get('email')?.touched &&
+        loginForm.get('email')?.hasError('required')"
        class="error">
       Ce champ est requis
     </p>
-    <p *ngIf="loginForm.get('login')?.dirty &&
-        loginForm.get('login')?.hasError('maxlength')"
+    <p *ngIf="loginForm.get('email')?.dirty &&
+        loginForm.get('email')?.hasError('maxlength')"
        class="error">
-      Maximum 10 char
+      Maximum 100 char
+    </p>
+    <p *ngIf="loginForm.get('email')?.dirty &&
+        loginForm.get('email')?.hasError('email')"
+       class="error">
+      Rentrez un email valide
     </p>
     <input type="password" placeholder="password" formControlName="password">
     <p *ngIf="loginForm.get('password')?.touched &&
