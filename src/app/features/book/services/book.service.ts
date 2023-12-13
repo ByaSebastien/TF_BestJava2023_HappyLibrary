@@ -24,14 +24,14 @@ export class BookService {
   }
 
   create(form: BookFormModel): Observable<BookModel> {
-    return this._http.post<BookModel>(`${environment.apiBaseUrl}/books`, form);
+    return this._http.post<BookModel>(`${environment.apiBaseUrl}/660/books`, form);
   }
 
   update(id: number, form: BookFormModel): Observable<BookModel> {
-    return this._http.put<BookModel>(`${environment.apiBaseUrl}/books/${id}`, form)
+    return this._http.put<BookModel>(`${environment.apiBaseUrl}/660/books/${id}`, form)
   }
 
   delete(id: number) {
-    this._http.delete(`${environment.apiBaseUrl}/books/${id}`)
+    this._http.delete(`${environment.apiBaseUrl}/660/books/${id}`)
   }
 }

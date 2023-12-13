@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Link} from "../../core/models/link.model";
 import {TokenDtoModel} from "../../core/models/token.dto.model";
 import {SessionService} from "../../core/services/session.service";
+import {Router} from "@angular/router";
 
 const anonymousNav: Link[] = [
   {title: 'Book',url:'/book'},
@@ -24,7 +25,8 @@ export class NavComponent implements OnInit {
   links!: Link[];
 
   constructor(
-    private readonly _sessionService: SessionService
+    private readonly _sessionService: SessionService,
+    private readonly _router: Router
   ) {
   }
 
@@ -39,5 +41,6 @@ export class NavComponent implements OnInit {
 
   logout(): void {
     this._sessionService.stop();
+    this._router.navigate(['/']);
   }
 }

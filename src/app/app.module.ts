@@ -9,8 +9,9 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './core/components/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
 import {SharedModule} from "./shared/shared.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { RegisterComponent } from './core/components/register/register.component';
+import {TokenInterceptor} from "./core/interceptors/token.interceptor";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,13 @@ import { RegisterComponent } from './core/components/register/register.component
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
